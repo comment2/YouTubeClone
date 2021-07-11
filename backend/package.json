@@ -3,16 +3,19 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "set PORT=3001&&nodemon ./bin/www"
+    "start": "set PORT=3001&&nodemon ./bin/www",
+    "client": "cd ../client && npm start",
+    "backend":"npm start",
+    "dev": "concurrently \"npm run backend\" \"npm run client\"" 
   },
   "dependencies": {
+    "concurrently": "^6.2.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
-    "morgan": "~1.9.1",
-    "npm-run-all": "^4.1.5"
+    "morgan": "~1.9.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.12"
